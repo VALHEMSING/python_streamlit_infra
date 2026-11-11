@@ -97,6 +97,29 @@ python -m streamlit run app.py
 Requiere Python 3.10 o superior. Probado con Python 3.14, Streamlit 1.66,
 NetworkX 3.7, Plotly 7.1 y pandas 3.1.
 
+## Despliegue en Streamlit Community Cloud
+
+El repositorio ya está listo para desplegar: la entrada es `app.py` en la raíz y
+`requirements.txt` fija las versiones probadas.
+
+1. Entra a <https://share.streamlit.io> con tu cuenta de GitHub.
+2. Pulsa **Create app** y elige **Deploy a public app from GitHub**.
+3. Completa los campos:
+   - Repository: `VALHEMSING/python_streamlit_infra`
+   - Branch: `main`
+   - Main file path: `app.py`
+4. En **Advanced settings** elige Python 3.12 o superior (desarrollo y pruebas con
+   3.14) y guarda.
+5. Pulsa **Deploy**. La primera compilación tarda unos minutos; después, cada
+   `git push` a `main` actualiza la app.
+
+Si el repositorio es privado, autoriza a Streamlit a leerlo desde el selector de
+repositorios (**Grant access**) o instala la GitHub App de Streamlit en la cuenta.
+La app no usa secretos ni variables de entorno.
+
+Enlace directo con los parámetros ya cargados:
+<https://share.streamlit.io/deploy?repository=VALHEMSING/python_streamlit_infra&branch=main&mainModule=app.py>
+
 ## Modelo matemático
 
 Grafo no dirigido `G = (V, E)`, origen `s = H`, destino `t = B`. Una ruta simple
